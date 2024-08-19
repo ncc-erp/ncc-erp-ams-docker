@@ -1,0 +1,6 @@
+[submodule "ncc-erp-ams-fe"]
+	path = ncc-erp-ams-fe
+	url = https://github.com/ncc-erp/ncc-erp-ams-fe.git
+[submodule "ncc-erp-ams"]
+	path = ncc-erp-ams
+	url = https://github.com/ncc-erp/ncc-erp-ams.git
