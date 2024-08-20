@@ -8,21 +8,21 @@ services:
       context: ./ncc-erp-ams/
       dockerfile: Dockerfile.php8.0
     ports:
-      - "8100:8000"
+      - "8000:8000"
     env_file:
       - ./envs/.env.be
     restart: always
 
   ams-fe:
-    image: "ams-fe-dev1"
+    image: "ncc-erp-ams-fe:latest"
     container_name: ams-fe-dev-dev1
-    restart: always
     build:
       context: ./ncc-erp-ams-fe
       dockerfile: Dockerfile
       args:
         - NODE_ENV=development
     ports:
-      - "8101:80"
+      - "80:80"
     env_file:
       - ./envs/.env.fe
+    restart: always

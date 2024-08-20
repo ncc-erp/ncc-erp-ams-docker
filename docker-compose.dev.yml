@@ -1,0 +1,20 @@
+version: "3.7"
+
+services:
+  ams-be:
+    image: "ams-be-dev1"
+    container_name: "ams-be-dev1"
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./envs/.env.be
+    restart: always
+
+  ams-fe:
+    image: "ncc-erp-ams-fe:latest"
+    container_name: ams-fe-dev-dev1
+    ports:
+      - "80:80"
+    env_file:
+      - ./envs/.env.fe
+    restart: always
