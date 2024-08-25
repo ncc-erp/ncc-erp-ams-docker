@@ -2,19 +2,25 @@ version: "3.7"
 
 services:
   ams-be:
-    image: "ams-be-dev1"
-    container_name: "ams-be-dev1"
+    image: "ncc-erp-ams-be:latest"
+    container_name: "ams-be-dev2"
+    build:
+      context: ./ncc-erp-ams/
+      dockerfile: Dockerfile.php8.0
     ports:
       - "8000:8000"
     env_file:
-      - ./envs/.env.be
+      - ./envs/.env.dev.be
     restart: always
 
   ams-fe:
     image: "ncc-erp-ams-fe:latest"
-    container_name: ams-fe-dev-dev1
+    container_name: ams-fe-dev2
+    build:
+      context: ./ncc-erp-ams-fe
+      dockerfile: Dockerfile
     ports:
-      - "80:80"
+      - "3000:80"
     env_file:
-      - ./envs/.env.fe
+      - ./envs/.env.dev.fe
     restart: always

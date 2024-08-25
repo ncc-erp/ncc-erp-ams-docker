@@ -1,2 +1,6 @@
 envs/.env.be
 envs/.env.fe
+envs/.env.dev.fe
+envs/.env.dev.be
+envs/.env.prod.fe
+envs/.env.prod.fe

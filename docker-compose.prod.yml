@@ -10,7 +10,7 @@ services:
     ports:
       - "8000:8000"
     env_file:
-      - ./envs/.env.be
+      - ./envs/.env.prod.be
     restart: always
 
   ams-fe:
@@ -19,10 +19,8 @@ services:
     build:
       context: ./ncc-erp-ams-fe
       dockerfile: Dockerfile
-      args:
-        - NODE_ENV=development
     ports:
       - "3000:80"
     env_file:
-      - ./envs/.env.fe
+      - ./envs/.env.prod.fe
     restart: always
